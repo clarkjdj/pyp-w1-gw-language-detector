@@ -4,12 +4,13 @@ from .languages import LANGUAGES
 
 def score_text(list_of_words, language):
     counter = 0
-    # go one at a time through each word in text
-        # if that word is in the most common word list, gets +1
+    # go one at a time through each word in list of words parameter
+        # if that word is in the most language's common word list, gets +1
     for word in list_of_words:
-        # if that word is in the most common word list, gets +1
         if word in language['common_words']:
             counter += 1
+
+    # returns integer score
     return counter
     
 
@@ -31,8 +32,3 @@ def detect_language(text, languages=LANGUAGES):
     return scores[-1][1]
       
 
-#==================================
-
-#def detect_language(text, languages=LANGUAGES):
-#   """Returns the detected language of given text."""
-    # implement your solution here
